@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python src/load_data.py --config=params.yaml
+    deps:
+    - path: data_given/heart.csv
+      md5: 0691643e62f74624d19253d61990b74b
+      size: 11323
+    - path: src/get_data.py
+      md5: bc9d246246f44d8d27f5e3310afbe67b
+      size: 633
+    - path: src/load_data.py
+      md5: 6288a66d5ebba1d5fe91e6477b6b89a9
+      size: 503
+    outs:
+    - path: data/raw/heart.csv
+      md5: 7f7e38960a3a094106e6c308b9c67e26
+      size: 11583
