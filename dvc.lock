@@ -16,3 +16,19 @@ stages:
     - path: data/raw/heart.csv
       md5: 7f7e38960a3a094106e6c308b9c67e26
       size: 11583
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+    - path: data/raw/heart.csv
+      md5: 7f7e38960a3a094106e6c308b9c67e26
+      size: 11583
+    - path: src/split_data.py
+      md5: 28f8560bb20b8e4d5f4a4de7933af494
+      size: 1040
+    outs:
+    - path: data/processed/test_heart.csv
+      md5: 61e883d45d487062d28a6498eba53092
+      size: 2395
+    - path: data/processed/train_heart.csv
+      md5: 7ac3f24b6afe3c21f2bee4ba3392de89
+      size: 9267
