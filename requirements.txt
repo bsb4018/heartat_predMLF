@@ -11,3 +11,4 @@ pytest
 tox
 matplotlib
 seaborn
+flake8
