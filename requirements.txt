@@ -9,3 +9,5 @@ pandas
 pyyaml
 pytest
 tox
+matplotlib
+seaborn
