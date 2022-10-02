@@ -12,3 +12,5 @@ tox
 matplotlib
 seaborn
 flake8
+flask
+gunicorn
