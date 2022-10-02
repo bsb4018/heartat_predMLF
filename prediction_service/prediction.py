@@ -1,3 +1,4 @@
+from pickletools import float8
 import yaml
 import os
 import json
@@ -66,8 +67,18 @@ def validate_input(dict_request):
 def form_response(dict_request):
     if validate_input(dict_request):
         data = dict_request.values()
-        data = [list(map(float, data))]
-        response = predict(data)
+        newdata = []
+        for value in data:
+            if type(value) == float:
+                newdata.append(float(value))
+            else:
+                newdata.append(str(value))
+        #data = [list(map(float, data))]
+        print(newdata)
+        iparr = []
+        iparr.append(newdata)
+        print(iparr)
+        response = predict(iparr)
         return response
 
 def api_response(dict_request):
